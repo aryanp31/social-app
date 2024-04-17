@@ -24,8 +24,8 @@ const LoginPage = () => {
         borderRadius="1.5rem"
         backgroundColor={theme.palette.background.alt}
       >
-        <Typography fontWeight="bold" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to Sociopedia, the Social Media for Sociopaths!
+        <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
+          Welcome to Socipedia, the Social Media for Sociopaths!
         </Typography>
         <Form />
       </Box>

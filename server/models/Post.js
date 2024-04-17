@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema(
   {
@@ -26,8 +26,8 @@ const postSchema = mongoose.Schema(
       type: Array,
       default: [],
     },
-    
-  }, { timestamps: true }
+  },
+  { timestamps: true }
 );
 
 const Post = mongoose.model("Post", postSchema);

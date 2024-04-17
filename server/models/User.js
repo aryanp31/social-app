@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema(
       min: 2,
       max: 50,
     },
-    lastName: { 
+    lastName: {
       type: String,
       required: true,
       min: 2,
@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
       min: 5,
     },
-    picture: {
+    picturePath: {
       type: String,
       default: "",
     },
@@ -38,7 +38,7 @@ const UserSchema = new mongoose.Schema(
     viewedProfile: Number,
     impressions: Number,
   },
-  {timestamps: true}
+  { timestamps: true }
 );
 
 const User = mongoose.model("User", UserSchema);

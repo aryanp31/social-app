@@ -1,5 +1,5 @@
-import Post from '../models/Post.js';
-import User from '../models/User.js';
+import Post from "../models/Post.js";
+import User from "../models/User.js";
 
 /* CREATE */
 export const createPost = async (req, res) => {
@@ -16,7 +16,7 @@ export const createPost = async (req, res) => {
       picturePath,
       likes: {},
       comments: [],
-    })
+    });
     await newPost.save();
 
     const post = await Post.find();
@@ -24,9 +24,9 @@ export const createPost = async (req, res) => {
   } catch (err) {
     res.status(409).json({ message: err.message });
   }
-}
+};
 
-/*  READ */
+/* READ */
 export const getFeedPosts = async (req, res) => {
   try {
     const post = await Post.find();
@@ -34,7 +34,7 @@ export const getFeedPosts = async (req, res) => {
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
-}
+};
 
 export const getUserPosts = async (req, res) => {
   try {
@@ -44,7 +44,7 @@ export const getUserPosts = async (req, res) => {
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
-}
+};
 
 /* UPDATE */
 export const likePost = async (req, res) => {
@@ -63,11 +63,11 @@ export const likePost = async (req, res) => {
     const updatedPost = await Post.findByIdAndUpdate(
       id,
       { likes: post.likes },
-      { new: true },
+      { new: true }
     );
-    
+
     res.status(200).json(updatedPost);
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
-}
+};
